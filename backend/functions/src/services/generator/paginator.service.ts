@@ -3,13 +3,13 @@ import Service from '../service';
 export default function(service: any) {
   return class extends Service {
     static __typename = service.__typename + 'Paginator';
+
     static presets = {
       default: {
         paginatorInfo: {
           total: null,
-          count: null,
         },
-        data: null
+        data: service.presets?.default
       }
     };
 

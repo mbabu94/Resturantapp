@@ -237,7 +237,7 @@ export default abstract class Service {
           if(this.sortFields.includes(item)) {
             total.push({
               field: item,
-              desc: args.sortDesc[index] === "true" || args.sortDesc[index] === true
+              desc: Array.isArray(args.sortDesc) ? (args.sortDesc[index] === "true" || args.sortDesc[index] === true) : true
             });
           }
           return total;
