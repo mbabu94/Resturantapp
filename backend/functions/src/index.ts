@@ -3,6 +3,8 @@ import * as express from 'express';
 import * as admin from 'firebase-admin';
 admin.initializeApp();
 
+import { Slack } from './services/misc/slack';
+
 //utils
 import mysql from './utils/mysql';
 
@@ -28,5 +30,9 @@ jql.process(app, schema);
 app.post('/pusher/auth', handlePusherAuth);
 
 app.post('/pusher/webhook', handleWebhook);
+
+app.post('/slack/import', Slack.importMessages);
+
+app.post('/slack/webhook', Slack.handleWebhook);
 
 export const api = functions.https.onRequest(app);
