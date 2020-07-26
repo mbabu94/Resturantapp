@@ -18,6 +18,7 @@ export function generateRootResolvers(service: any, params: any) {
           method: "get",
           route: "/" + service.__typename + "/:id",
           resolver: (req) => service.getRecord(req, {
+            ...req.query,
             ...req.params,
             ...req.jql?.__args
           }, req.jql)
@@ -28,6 +29,7 @@ export function generateRootResolvers(service: any, params: any) {
           method: "get",
           route: "/" + service.__typename,
           resolver: (req) => service.paginator.getRecord(req, {
+            ...req.query,
             ...req.params,
             ...req.jql?.__args
           }, req.jql)

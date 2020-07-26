@@ -15,6 +15,7 @@ export function process(app: any, schema) {
 
       req.jql = req.body.query || {};
     }
+    
     next();
   });
   
