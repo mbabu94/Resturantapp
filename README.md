@@ -1,13 +1,17 @@
 # Techie Helper Discord Bot & Webapp
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Requierements
+
 Node v12.16.1 or higher
+
 ```
 https://nodejs.org/en/download/
 ```
 
 ## Front end & API Installation
+
 ### Setting up the virtual environment
 
 npm install -g bootstrap
@@ -15,6 +19,10 @@ npm install -g bootstrap
 npm install brain.js
 
 npm install react-router
+
+npm install --save react-router-dom
+
+yarn add node-sass sass-loader
 
 ## Available Scripts
 
